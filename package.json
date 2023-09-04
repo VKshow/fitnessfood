@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/VKshow/fitnessfood#readme",
   "devDependencies": {
-    "json-server": "^0.17.3"
+    "json-server": "^0.17.3",
+    "webpack-cli": "^5.1.4"
   }
 }
