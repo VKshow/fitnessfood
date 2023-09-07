@@ -1,18 +1,19 @@
-function slider() {
+function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field}) {
     //slider
 
-    const slides = document.querySelectorAll('.offer__slide'),
-        slider = document.querySelector('.offer__slider'),
-        prev = document.querySelector('.offer__slider-prev'),
-        next = document.querySelector('.offer__slider-next'),
-        total = document.querySelector('#total'),
-        current = document.querySelector('#current'),
-        slidesWrapper = document.querySelector('.offer__slider-wrapper'),
-        slidesField = document.querySelector('.offer__slider-inner'),
+    const slides = document.querySelectorAll(slide),
+        slider = document.querySelector(container),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        total = document.querySelector(totalCounter),
+        current = document.querySelector(currentCounter),
+        slidesWrapper = document.querySelector(wrapper),
+        slidesField = document.querySelector(field),
         width = window.getComputedStyle(slidesWrapper).width;
 
     let slideIndex = 1;
 
+    let dots = [];
 
     // ver2 with carousel
 
@@ -25,6 +26,7 @@ function slider() {
         total.textContent = slides.length;
         current.textContent = slideIndex;
     }
+    
 
     slidesField.style.width = 100 * slides.length + '%';
     slidesField.style.display = 'flex';
@@ -160,7 +162,7 @@ function slider() {
 
 
         });
-    })
+    });
 
     // slider ver1
 
@@ -207,4 +209,4 @@ function slider() {
 
 }
 
-module.exports = slider;
+export default slider;
